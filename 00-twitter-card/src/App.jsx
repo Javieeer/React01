@@ -1,20 +1,14 @@
+import React from 'react'
 import './App.css'
+import './twitterFollowCard'
+import { TwitterFollowCard } from './twitterFollowCard'
 
 export function App () {
     return (
-        <article>
-            <header>
-                <img src="https://unavatar.io/twitter/JavierZ_py" alt="El avatar de Javier" />
-                <div>
-                    <strong>Javier Zapata</strong>
-                    <span>JavierZ_py</span>
-                </div>
-            </header>
-            <aside>
-                <button>
-                    Follow
-                </button>
-            </aside>
-        </article>
+        <section className='App'>
+            <TwitterFollowCard UserName={'Miguel Anger Duran'} UserID={'midudev'}/>
+            <TwitterFollowCard UserName={'Tesla'} UserID={'ElonMusk'}/>
+            <TwitterFollowCard UserName={'Javier Zapata'} UserID={'JavierZ_py'}/>
+        </section>
     )
 }
