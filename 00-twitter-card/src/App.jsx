@@ -3,6 +3,28 @@ import './App.css'
 import './twitterFollowCard'
 import { TwitterFollowCard } from './twitterFollowCard'
 
+const userList = [
+    {
+        name: 'Javier Zapata',
+        id: 'JavierZ_py',
+        isfollowing: true
+    },
+    {
+        name: 'Miguel Angel Duran',
+        id: 'midudev',
+        isfollowing: false
+    },
+    {
+        name: 'TESLA',
+        id: 'ElonMusk',
+        isfollowing: true
+    },
+    {
+        name: 'Ash Crypto',
+        id: 'Ashcryptoreal',
+        isfollowing: true
+    }
+]
 
 export function App () {
 
