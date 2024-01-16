@@ -8,19 +8,19 @@ export function App () {
 
     return (
         <section className='App'>
-            <TwitterFollowCard isFollowing={true} UserID={'midudev'}>
+            <TwitterFollowCard initialIsFollowing={true} UserID={'midudev'}>
                 Miguel Angel Duran
             </TwitterFollowCard>
 
-            <TwitterFollowCard isFollowing={false} UserID={'ElonMusk'}>
+            <TwitterFollowCard initialIsFollowing={false} UserID={'ElonMusk'}>
                 TESLA
             </TwitterFollowCard>
 
-            <TwitterFollowCard isFollowing={false} UserID={'JavierZ_py'}>
+            <TwitterFollowCard initialIsFollowing={false} UserID={'JavierZ_py'}>
                 Javier Zapata
             </TwitterFollowCard>
 
-            <TwitterFollowCard isFollowing={true} UserID={'Ashcryptoreal'}>
+            <TwitterFollowCard initialIsFollowing={true} UserID={'Ashcryptoreal'}>
                 Ash Crypto
             </TwitterFollowCard>
         </section>

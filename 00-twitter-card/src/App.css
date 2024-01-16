@@ -27,6 +27,10 @@
     border-radius: 100px;
 }
 
+.tw-followCard-Following {
+    display: block;
+}
+
 .tw-followCard-button {
     margin-left: 16px;
     border: 0;
@@ -36,7 +40,32 @@
     cursor: pointer;
 }
 
+.tw-followCard-button.isFollowing {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    width: 120px;
+}
+
+.tw-followCard-button.isFollowing:hover {
+    background-color: rgba(170, 170, 170, 0.068);
+    color: red;
+    border: 1px solid red;
+}
+
 .tw-followCard-button:hover{
     background-color: #3e71fc;
     transition: .3s ease background-color;
+
+}
+.tw-followCard-button.isFollowing:hover .tw-followCard-Following {
+    display: none;
+}
+
+.tw-followCard-button.isFollowing:hover .tw-followCard-stopFollow {
+    display: block;
+}
+
+.tw-followCard-stopFollow{
+    display: none;
 }
