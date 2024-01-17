@@ -54,9 +54,9 @@ function App() {
     return null
   }
   
-  /* Actualizar tablero */
   const updateBoard = (index) => {
-    /* Si ya hay algo dentro del cuadro, no se puede sobreescribir */
+    /* Si ya hay algo dentro del cuadro, no se puede sobreescribir
+    Si ya hay 3 seguidos debe parar (winner)*/
     if (board[index] || winner) return
 
     /* Se guarda los cambios del tablero en una copia */
@@ -103,6 +103,15 @@ function App() {
           {TURNS.O}
         </Square>
       </section>
+      <button>
+        <strong>Restart</strong>
+      </button>
+      {/* <section className="winner">
+        <div className="text">
+          <h1>The winner is: {winner}</h1>
+        </div>
+        <button className="win">Restart</button>
+      </section> */}
     </main>
   )
 } 
