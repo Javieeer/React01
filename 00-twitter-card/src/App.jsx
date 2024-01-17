@@ -35,11 +35,13 @@ export function App () {
                     const { name, id, isfollowing } = user
                     return (
                         <TwitterFollowCard 
+                            key={id}
                             UserID={id}
                             initialIsFollowing={isfollowing}
                         >
                             {name}
                         </TwitterFollowCard>
+
                     )
                 })
             }
