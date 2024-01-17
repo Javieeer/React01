@@ -1,4 +1,5 @@
 import { useState } from "react"
+import confetti from "canvas-confetti"
 
 const TURNS = {
   X: 'x',
@@ -53,6 +54,16 @@ function App() {
     }
     return null
   }
+
+  const checkEndGame = (newBoard) => {
+    return newBoard.every((Square) => Square != null)
+  }
+
+  const resetGame = () => {
+      setBoard(Array(9).fill(null))
+      setWinner(null)
+      setTurn(TURNS.X)
+  }
   
   const updateBoard = (index) => {
     /* Si ya hay algo dentro del cuadro, no se puede sobreescribir
@@ -73,7 +84,10 @@ function App() {
     /* Revisar si hay ganador */
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
+      confetti()
       setWinner(newWinner)
+    } else if (checkEndGame(newBoard)) {
+      setWinner(false)
     }
   }
 
@@ -102,16 +116,32 @@ function App() {
         <Square isSelected={turn == TURNS.O}>
           {TURNS.O}
         </Square>
+      </section> 
+      {
+        winner != null && (
+          <section className="winner">
+          <div className="text">
+            <h2>
+              {
+                winner == false
+                  ? 'Tie'
+                  : 'Win: '
+              }
+            </h2>
+            <header className="win">
+              {winner && <Square>{winner}</Square>}
+            </header>
+            <footer>
+              <button onClick={resetGame}>Restart</button>
+            </footer>
+          </div>
+          
       </section>
-      <button>
+        )
+      }
+      <button onClick={resetGame}>
         <strong>Restart</strong>
       </button>
-      {/* <section className="winner">
-        <div className="text">
-          <h1>The winner is: {winner}</h1>
-        </div>
-        <button className="win">Restart</button>
-      </section> */}
     </main>
   )
 } 
