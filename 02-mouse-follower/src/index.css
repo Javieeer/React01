@@ -72,4 +72,5 @@ button:focus-visible {
 
 body.no-cursor {
   cursor: none;
+  overflow: hidden;
 }

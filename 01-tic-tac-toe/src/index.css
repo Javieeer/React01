@@ -64,10 +64,6 @@ body {
   gap: 10px;
 }
 
-.board .game .square {
-  padding-bottom: 15px;
-}
-
 .turn {
   display: flex;
   justify-content: center;
@@ -76,10 +72,6 @@ body {
   position: relative;
   border-radius: 10px;
   border: 2px solid #fff;
-}
-
-.turn .square {
-  padding-bottom: 15px;
 }
 
 .turn .square,
@@ -137,5 +129,5 @@ body {
   place-items: center;
   cursor: pointer;
   font-size: 48px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
