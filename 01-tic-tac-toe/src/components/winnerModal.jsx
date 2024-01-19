@@ -2,7 +2,6 @@ import { Square } from "./Square.jsx"
 
 export function WinnerModal ({winner, resetGame}) {
     if(winner == null) return null
-
     const winText = ({winner}) ? 'Win: ' : 'Tie'
 
     return (

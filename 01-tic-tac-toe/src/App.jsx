@@ -8,6 +8,8 @@ import { resetGameStorage } from "./logic/storage"
 import { saveGame } from "./logic/storage"
 
 function App() {
+  document.title = 'Tic Tac Toe - Javier'
+
   /* Creamos cuadros en un array y que esten vacios */
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem('board')
