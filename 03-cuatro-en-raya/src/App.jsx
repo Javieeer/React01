@@ -8,12 +8,12 @@ import { resetGameStorage } from "./logic/storage"
 import { saveGame } from "./logic/storage"
 
 function App() {
-  document.title = 'Tic Tac Toe - Javier'
+  document.title = 'Cuatro en raya - Javier'
 
   /* Creamos cuadros en un array y que esten vacios */
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem('board')
-    return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null)
+    return boardFromStorage ? JSON.parse(boardFromStorage) : Array(64).fill(null)
   })
 
   /* Creando alternancia de turnos si se pulsa un cuadro */
@@ -25,7 +25,7 @@ function App() {
   const [winner, setWinner] = useState(null)
 
   const resetGame = () => {
-      setBoard(Array(9).fill(null))
+      setBoard(Array(64).fill(null))
       setWinner(null)
       setTurn(TURNS.X)
       resetGameStorage()
@@ -54,7 +54,8 @@ function App() {
     })
 
     /* Revisar si hay ganador */
-    const newWinner = checkWinner(newBoard)
+    const evaluateWin = []
+    const newWinner = checkWinner(newBoard, evaluateWin)
     if (newWinner) {
       confetti()
       setWinner(newWinner)
