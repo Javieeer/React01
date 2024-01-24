@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    font-family: 'system-ui';
+}
+.appDeGatitos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    height: auto;
+}
+
+img {
+    max-width: 500px;
+}
